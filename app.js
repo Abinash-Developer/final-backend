@@ -5,7 +5,7 @@ const dbconnect = require("./config/dbconnect");
 dbconnect();
 app.use(express.json());
 app.use("/api/user", require("./routes/user"));
-app.get('/', (req, res) => {
+app.get('/get', (req, res) => {
   res.send('Welcome to the API');
 });
 
