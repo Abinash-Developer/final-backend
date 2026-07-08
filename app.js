@@ -7,6 +7,9 @@ dbconnect();
 app.use(cors());
 app.use(express.json());
 app.use("/api/user", require("./routes/user"));
+app.get('/',(req,res)=>{
+  res.json({message:"working great"})
+})
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
