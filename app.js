@@ -6,7 +6,10 @@ const cors = require("cors");
 dbconnect();
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use("/api/user", require("./routes/user"));
+app.use("/api/product", require("./routes/product"));
+app.use("/uploads", express.static("uploads"));
 app.get('/',(req,res)=>{
   res.json({message:"working great"})
 })
